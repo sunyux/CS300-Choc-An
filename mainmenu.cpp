@@ -1,7 +1,5 @@
-//#include "ChocAn.h"
-#include <iostream>
-#include <cctype>
-#include <cstring>
+#include "providers.h"
+#include "members.h"
 using namespace std;
 
 //Ethan Saftler, Ryan Tran, Cristian Torres Salazar, Matthew Marcellinus, Yuxin Sun, Chentao Ma
@@ -23,41 +21,42 @@ int main()
 	while (selection != '9')
 	{
 		cout << endl << endl;
-		cout << "    Chocoholics Anonymous Manager Terminal\n\n";
-		cout << "    *** Main Menu *** \n";
-		cout << "1 - Slide new member number\n";
-		cout << "2 - Bill ChocAn for current member\n";
-		cout << "3 - Request Provider Directory\n";
-		cout << "4 - Run weekly report\n";
-		cout << "5 - Add Member\n";
-		cout << "6 - Update Member \n ";
-		cout << "7 - Delete Member \n ";
-		cout << "8 - Exit \n ";
+		cout << "Chocoholics Anonymous Manager Terminal\n\n";
+		cout << "*** Main Menu *** \n";
+		cout << "(Make a selection)\n";
+		cout << "	1 - Slide new member number (select member)\n";
+		cout << "	2 - Bill ChocAn for currently selected member (add service)\n";
+		cout << "	3 - Request Provider Directory\n";
+		cout << "	4 - Run weekly report\n";
+		cout << "	5 - Add Member\n";
+		cout << "	6 - Delete Member\n"
+		cout << "	7 - Add Provider\n";
+		cout << "	8 - Exit\n ";
 
 		cin >> selection;
 		cin.ignore(100, '\n');
 		switch(selection)
 		{
 			case '1':
-
+				//insert case for adding new member here
 				break;
 			case '2':
-
+				//insert case for adding a service here
 				break;
 			case '3':	
-
+				//insert case for adding a service here
 				break;
 			case '4':	
-
+				//insert case for adding a service here
 				break;
 			case '5':
-
+				//insert case for adding a service here
 				break;
 			case '6':
-
+				//insert case for adding a service here
 				break;
 			case '7':
-
+				//insert case for adding a service here
 				break;
 			case '8':		
 				cout << endl << "Are you sure you would like to quit?" << endl;
