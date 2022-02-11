@@ -1,4 +1,3 @@
-#include "providers.h"
 #include "members.h"
 using namespace std;
 
@@ -29,7 +28,7 @@ int main()
 		cout << "	3 - Request Provider Directory\n";
 		cout << "	4 - Run weekly report\n";
 		cout << "	5 - Add Member\n";
-		cout << "	6 - Delete Member\n"
+		cout << "	6 - Delete Member\n";
 		cout << "	7 - Add Provider\n";
 		cout << "	8 - Exit\n ";
 

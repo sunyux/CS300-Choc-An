@@ -26,7 +26,7 @@ class member
         int * number;
         int * zip;
         service_node * service; //LLL of services member has provided
-}
+};
 
 
 //BST members class

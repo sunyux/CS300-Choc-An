@@ -5,8 +5,22 @@
 #include <time.h>
 
 
-
+//nodes for service events (used by provider and member class)/
 //provider class
+struct service_node
+{
+    service_node();
+    ~service_node();
+    service_node * current;
+    char * current_date;
+    char * service_date;
+    char * provider_number;
+    char * member_number;
+    char * service_code;
+    char * comments;
+
+};
+
 class provider
 {
     public:
@@ -26,10 +40,11 @@ class provider
         int * zip;
         int total_consults;
         int weekly_fee;
-        service_node * service; //LLL of services provider has provided
-}
+        service_node * services; //LLL of services provider has provided
+};
 
-//nodes for BST
+
+//nodes for BST	(used by providers and members class)
 struct node
 {
     node();
@@ -38,21 +53,6 @@ struct node
     node * right;
     provider current;
 };
-
-//nodes for service events (used by provider and member class)
-struct service_node
-{
-    service_node();
-    ~service_node();
-    service_node * current;
-    char * current_date;
-    char * service_date;
-    char * provider_number;
-    char * member_number;
-    char * service_code;
-    char * comments;
-
-}
 
 //BST providers class
 class providers
