@@ -27,6 +27,17 @@ bool check_if_letter(char * to_check)
     return true;
 }
 
+void uppercaser(char * to_upper)
+{
+    int i = 0;
+    int len = strlen(to_upper);
+    while (i < len){
+        to_upper[i] = toupper(to_upper[i]);
+        i++;
+    }
+    return;
+}
+
 service_node::service_node()
 {
     next = NULL;
@@ -94,11 +105,12 @@ int provider::create()
     strcpy(number, temp_number);
     address = new char[strlen(temp_address)+1];
     strcpy(address, temp_address);
-    city = new char[strlen(temp_name)+1];
+    city = new char[strlen(temp_city)+1];
     strcpy(city, temp_city);
-    state = new char[strlen(temp_name)+1];
+    state = new char[strlen(temp_state)+1];
     strcpy(state, temp_state);
-    name = new char[strlen(temp_name)+1];
+    uppercaser(state);
+    zip = new char[strlen(temp_zip)+1];
     strcpy(zip, temp_zip);
     return 0;
 
@@ -131,7 +143,7 @@ int provider::copy_provider(const provider & to_copy)
 //display current provider and all service events
 int provider::display() const{
     cout << "\n\nProvider name: " << name << endl;
-    cout << "Provider address: " << address << "\n" << city << state << zip << endl;
+    cout << "Provider address: " << address << "\n\t\t" << city << ", " << state << " " << zip << endl;
     cout << "Total consults: " << total_consults << endl;
     cout << "Weekly fee: " << weekly_fee << endl;
     cout << "Service Record:";

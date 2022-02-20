@@ -4,17 +4,17 @@
 #include <fstream>
 #include <time.h>
 
-const int NAMESIZE = 25;
-const int NUMBERSIZE = 9;
-const int ADDRESSSIZE = 25;
-const int CITYSIZE = 14;
-const int STATESIZE = 2;
-const int ZIPSIZE = 5;
-const int MMDDYY = 6;
+const int NAMESIZE = 26;
+const int NUMBERSIZE = 10;
+const int ADDRESSSIZE = 26;
+const int CITYSIZE = 15;
+const int STATESIZE = 3;
+const int ZIPSIZE = 6;
+const int MMDDYY = 7;
 
 
 //displays invalidity of inputted data based on its associated prime number
-//use in tandem with check_format functions
+//use in tandem with check_format() functions
 void display_invalidity(int check);
 
 //check if array of chars is digits
@@ -22,6 +22,9 @@ bool check_if_digit(char * to_check);
 
 //check if array of chars is letters
 bool check_if_letter(char * to_check);
+
+//convert array of chars to uppercase
+void uppercaser(char * to_upper);
 
 //nodes for service events (used by provider and member class)/
 //provider class
@@ -36,7 +39,6 @@ struct service_node
     char * member_number;
     char * service_code;
     int fee;
-
 };
 
 class provider

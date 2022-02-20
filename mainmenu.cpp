@@ -12,6 +12,7 @@ int main()
 	//variables
 	char selection = '0';
 	char quit = 'a';
+	provider * temp_provider = new provider;
 
 	//welcome message
 	cout << "\n\nWelcome to the CS202 Contact and Device Manager\nCreated by Ethan Saftler\n\n\n";
@@ -23,8 +24,8 @@ int main()
 		cout << "Chocoholics Anonymous Manager Terminal\n\n";
 		cout << "*** Main Menu *** \n";
 		cout << "(Make a selection)\n";
-		cout << "	1 - Slide new member number (select member)\n";
-		cout << "	2 - Bill ChocAn for currently selected member (add service)\n";
+		cout << "	1 - Select member by number (Slide member card)\n";
+		cout << "	2 - Add service for selected member (Bill ChocAn)\n";
 		cout << "	3 - Request Provider Directory\n";
 		cout << "	4 - Run weekly report\n";
 		cout << "	5 - Add Member\n";
@@ -38,28 +39,27 @@ int main()
 		{
 			case '1':
 				//insert case for adding new member here
-				//TEMP TESTING CODE
-				int j;
-				cin >> j;
-				display_invalidity(j);
+				//TODO - select current member 
 				break;
 			case '2':
-				//insert case for adding a service here
+				//TODO - add service
 				break;
 			case '3':	
-				//insert case for adding a service here
+				//TODO - uptdate to display entire providers class
+				temp_provider->display();
 				break;
 			case '4':	
-				//insert case for adding a service here
+				//TODO - display weekly report
 				break;
 			case '5':
-				//insert case for adding a service here
+				//TODO - add member
 				break;
 			case '6':
-				//insert case for adding a service here
+				//TODO - delete member
 				break;
 			case '7':
-				//insert case for adding a service here
+				//TODO - update to providers class
+				temp_provider->create();
 				break;
 			case '8':		
 				cout << endl << "Are you sure you would like to quit?" << endl;
