@@ -38,6 +38,10 @@ int main()
 		{
 			case '1':
 				//insert case for adding new member here
+				//TEMP TESTING CODE
+				int j;
+				cin >> j;
+				display_invalidity(j);
 				break;
 			case '2':
 				//insert case for adding a service here

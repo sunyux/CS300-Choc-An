@@ -4,6 +4,24 @@
 #include <fstream>
 #include <time.h>
 
+const int NAMESIZE = 25;
+const int NUMBERSIZE = 9;
+const int ADDRESSSIZE = 25;
+const int CITYSIZE = 14;
+const int STATESIZE = 2;
+const int ZIPSIZE = 5;
+const int MMDDYY = 6;
+
+
+//displays invalidity of inputted data based on its associated prime number
+//use in tandem with check_format functions
+void display_invalidity(int check);
+
+//check if array of chars is digits
+bool check_if_digit(char * to_check);
+
+//check if array of chars is letters
+bool check_if_letter(char * to_check);
 
 //nodes for service events (used by provider and member class)/
 //provider class
@@ -11,13 +29,13 @@ struct service_node
 {
     service_node();
     ~service_node();
-    service_node * current;
+    service_node * next;
     char * current_date;
     char * service_date;
     char * provider_number;
     char * member_number;
     char * service_code;
-    char * comments;
+    int fee;
 
 };
 
@@ -26,8 +44,12 @@ class provider
     public:
         provider();
         ~provider();
-        int create_provider(char * name, char * address, char * city, char * state, int * number, int * zip, int total_consults, int weekly_fee);
+        //not sure if needed:
+        //provider(char * name, char * address, char * city, char * state, char * number, char * zip, int total_consults, int weekly_fee);
+        int create();
         int copy_provider(const provider & provider_to_copy);
+        int check_format(bool display = true);
+        int add_service();
         int retrieve_name(char * & name_to_ret);
         int display() const;
         int delete_all();
@@ -36,8 +58,8 @@ class provider
         char * address;
         char * city;
         char * state;
-        int * number;
-        int * zip;
+        char * number;
+        char * zip;
         int total_consults;
         int weekly_fee;
         service_node * services; //LLL of services provider has provided

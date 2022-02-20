@@ -13,7 +13,7 @@ class member
     public:
         member();
         ~member();
-        int create_member(char * name, char * address, char * city, char * state, int * number, int * zip);
+        int create_member(char * name, char * address, char * city, char * state, char * number, char * zip);
         int copy_member(const member & member_to_copy);
         int retrieve_name(char * & name_to_ret);
         int display() const;
@@ -23,8 +23,8 @@ class member
         char * address;
         char * city;
         char * state;
-        int * number;
-        int * zip;
+        char * number;
+        char * zip;
         service_node * service; //LLL of services member has provided
 };
 
