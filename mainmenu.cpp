@@ -13,6 +13,10 @@ int main()
 	char selection = '0';
 	char quit = 'a';
 	provider * temp_provider = new provider;
+	provider * temp_provider2 = new provider;
+	provider * temp_provider3 = new provider;
+	providers * temp_providers = new providers;
+	char temp_numb[NUMBERSIZE];
 
 	//welcome message
 	cout << "\n\nWelcome to the CS202 Contact and Device Manager\nCreated by Ethan Saftler\n\n\n";
@@ -46,7 +50,10 @@ int main()
 				break;
 			case '3':	
 				//TODO - uptdate to display entire providers class
-				temp_provider->display();
+				cout << "enter provider number to display";
+				cin.get(temp_numb, NUMBERSIZE, '\n');
+				cin.ignore(100, '\n');
+				temp_providers->display(temp_numb);
 				break;
 			case '4':	
 				//TODO - display weekly report
@@ -60,6 +67,11 @@ int main()
 			case '7':
 				//TODO - update to providers class
 				temp_provider->create();
+				temp_providers->insert(*temp_provider);
+				temp_provider2->create();
+				temp_providers->insert(*temp_provider2);
+				temp_provider3->create();
+				temp_providers->insert(*temp_provider3);
 				break;
 			case '8':		
 				cout << endl << "Are you sure you would like to quit?" << endl;

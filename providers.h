@@ -46,15 +46,14 @@ class provider
     public:
         provider();
         ~provider();
-        //not sure if needed:
-        //provider(char * name, char * address, char * city, char * state, char * number, char * zip, int total_consults, int weekly_fee);
+        //NOT SURE provider(char * name, char * address, char * city, char * state, char * number, char * zip, int total_consults, int weekly_fee);
         int create();
         int copy_provider(const provider & provider_to_copy);
         int check_format(bool display = true);
-        int add_service();
-        int retrieve_name(char * & name_to_ret);
+        //TO DO int add_service();
+        int retrieve_name(char * & name_to_return);
+        int retrieve_number(char * & numb_to_return);
         int display() const;
-        int delete_all();
     private:
         char * name;
         char * address;
@@ -85,27 +84,27 @@ class providers
                 providers();
                 ~providers();
 
-                int delete_all();
-                int delete_all(node * & root);
+                //TO DO int delete_all();
+                //TO DO int delete_all(node * & root);
 
-                int insert (provider & provider_to_insert);
-                int insert (node * & root, provider & provider_to_insert);
+                int insert (provider & provider_to_add);
+                int insert (node * & root, provider & provider_to_add);
 
-                int retrieve (char * name_to_get, provider & provider_to_return);
+                int retrieve(char * name_to_get, provider & provider_to_return);
                 int retrieve(node * root, char * name, provider & provider_to_return);
 
-                int display(char * prodiver_todisplay);
-                int display(node * root, char * provider_todisplay);
+                int display(char * prodiver_number_to_display);
+                int display(node * root, char * provider_number_to_display);
 
-                int remove(char * name_to_remove);
-                int remove(node * & root, node * & prev, char * prodiver_to_remove);
-                int remove(node * & root, char * prodiver_to_remove);
+                //TO DO int remove(char * name_to_remove);
+                //TO DO int remove(node * & root, node * & prev, char * prodiver_to_remove);
+                //TO DO int remove(node * & root, char * prodiver_to_remove);
 
-                int remove_provider(char * provider_to_remove);//, char * & found_match_name);
-                int remove_provider(node * & root, char * provider_to_remove, char * & found_match_name);
+                //TO DO int remove_provider(char * provider_to_remove);//, char * & found_match_name);
+                //TO DO int remove_provider(node * & root, char * provider_to_remove, char * & found_match_name);
 
-                int height();
-                int height(node * root);
+                //TO DO int height();
+                //TO DO int height(node * root);
         private:
                 node * root;
 

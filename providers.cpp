@@ -47,6 +47,18 @@ service_node::~service_node()
     next = NULL;
 }
 
+node::node()
+{
+    left = NULL;
+    right = NULL;
+}
+
+node::~node()
+{
+    left = NULL;
+    right = NULL;
+}
+
 provider::provider()
 {
     name = NULL;
@@ -201,6 +213,18 @@ int provider::check_format(bool display)
     return i;
 }
 
+int provider::retrieve_name(char * & name_to_return){
+    name_to_return = new char[strlen(name)+1];
+    strcpy(name_to_return, name);
+    return 1;
+}
+
+int provider::retrieve_number(char * & number_to_return){
+    number_to_return = new char[strlen(number)+1];
+    strcpy(number_to_return, number);
+    return 1;
+}
+
 //displayed associated error code. use in tandem with check_format
 void display_invalidity(int check)
 {
@@ -218,5 +242,65 @@ void display_invalidity(int check)
         if (temp == 0) cerr << "\ninvalid state. ";
         temp = (check % 13);
         if (temp == 0) cerr << "\ninvalid zip. ";
+    }
+}
+
+
+
+providers::providers()
+{
+    root = NULL;
+}
+
+int providers::insert(provider & provider_to_add){
+    return insert(root, provider_to_add);
+}
+
+int providers::insert(node * & root, provider & provider_to_add)
+{
+    if (!root)
+    {
+        root = new node;
+        root->current.copy_provider(provider_to_add);
+        root->left = NULL;
+        root->right = NULL;
+    }else{
+        char * tempname;
+        char * tempname2;
+        int comp = 0;
+        provider_to_add.retrieve_name(tempname);
+        root->current.retrieve_name(tempname2);
+        comp = strcmp(tempname, tempname2);
+        if (comp < 0)
+        {
+            insert(root->left, provider_to_add);
+        }else{
+            insert(root->right, provider_to_add);
+        }
+        return 1;
+    }
+}
+
+//displays info of the provided provider number
+int providers::display(char * provider_number){
+    return display(root, provider_number);
+}
+
+int providers::display(node * root, char * provider_number){
+    if (!root) return 0;
+    else{
+        char * temp_numb;
+        int comp = 0;
+        int i = 0;
+        root->current.retrieve_number(temp_numb);
+        comp = strcmp(provider_number, temp_numb);
+        if (comp == 0)
+        {
+            root->current.display();
+            i++;
+        }
+        i += display(root->left, provider_number);
+        i += display(root->right, provider_number);
+        return i;
     }
 }
