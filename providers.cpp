@@ -1,6 +1,12 @@
 #include "providers.h"
 using namespace std;
 
+//Ethan Saftler, Ryan Tran, Cristian Torres Salazar, Matthew Marcellinus, Yuxin Sun, Chentao Ma
+
+//CS300 Term Project - PSU Winter 2022
+//Chocoholics Service Terminal Software
+
+
 //check if array of chars is digits
 bool check_if_digit(char * to_check)
 {
@@ -212,7 +218,7 @@ int provider::check_format(bool display)
     if (display == true){
         display_invalidity(i);
     }
-    cout << "I is: " << i << endl;
+    //debugging: cout << "I is: " << i << endl;
     return i;
 }
 

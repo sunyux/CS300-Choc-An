@@ -4,6 +4,12 @@
 #include <fstream>
 #include <time.h>
 
+//Ethan Saftler, Ryan Tran, Cristian Torres Salazar, Matthew Marcellinus, Yuxin Sun, Chentao Ma
+
+//CS300 Term Project - PSU Winter 2022
+//Chocoholics Service Terminal Software
+
+
 const int NAMESIZE = 26;
 const int NUMBERSIZE = 10;
 const int ADDRESSSIZE = 26;

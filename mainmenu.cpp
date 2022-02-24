@@ -3,7 +3,8 @@ using namespace std;
 
 //Ethan Saftler, Ryan Tran, Cristian Torres Salazar, Matthew Marcellinus, Yuxin Sun, Chentao Ma
 
-//CS300 Term Project 
+//CS300 Term Project - PSU Winter 2022
+//Chocoholics Service Terminal Software
 
 
 
@@ -22,7 +23,7 @@ int main()
 	//while loop for main menu using switch statement for selection
 	while (selection != 'Z')
 	{
-		cout << endl << endl;
+		cout << endl << endl << endl << endl << endl << endl;
 		cout << "Chocoholics Anonymous Manager Terminal\n\n";
 		cout << "*** Main Menu *** \n";
 		cout << "(Make a selection)\n";
@@ -43,24 +44,36 @@ int main()
 			case '1':
 				//insert case for adding new member here
 				//TODO - select current member 
+				cout << "\n\nPress enter to return to the main menu...\n";
+				cin.get(); 
 				break;
 			case '2':
 				//TODO - add service
+				cout << "\n\nPress enter to return to the main menu...\n";
+				cin.get(); 
 				break;
 			case '3':	
 				temp_providers->display_all();
+				cout << "\n\nPress enter to return to the main menu...\n";
+				cin.get(); 
 				break;
 			case '4':	
 				//TODO - display weekly report
+				cout << "\n\nPress enter to return to the main menu...\n";
+				cin.get(); 
 				break;
 			case '5':
 				//TODO - add member
+				cout << "\n\nPress enter to return to the main menu...\n";
+				cin.get(); 
 				break;
 			case '6':
 				//TODO - delete member
+				cout << "\n\nPress enter to return to the main menu...\n";
+				cin.get(); 
 				break;
 			case '7':
-				//TODO - update to providers class
+				//TODO - add function to stow data in file
 				temp_provider->create();
 				check = temp_provider->check_format();
 				if (check == 1)
@@ -68,6 +81,8 @@ int main()
 				else{
 					cout << "\nIncorrect Info. Provider was not added.";
 				}
+				cout << "\n\nPress enter to return to the main menu...\n";
+				cin.get(); 
 				break;
 			case '8':
 				//TODO - delete provider
