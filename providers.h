@@ -96,6 +96,9 @@ class providers
                 int display(char * prodiver_number_to_display);
                 int display(node * root, char * provider_number_to_display);
 
+                int display_all();
+                int display_all(node * root);
+
                 //TO DO int remove(char * name_to_remove);
                 //TO DO int remove(node * & root, node * & prev, char * prodiver_to_remove);
                 //TO DO int remove(node * & root, char * prodiver_to_remove);

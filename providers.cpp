@@ -264,6 +264,7 @@ int providers::insert(node * & root, provider & provider_to_add)
         root->current.copy_provider(provider_to_add);
         root->left = NULL;
         root->right = NULL;
+        return 0;
     }else{
         char * tempname;
         char * tempname2;
@@ -301,6 +302,21 @@ int providers::display(node * root, char * provider_number){
         }
         i += display(root->left, provider_number);
         i += display(root->right, provider_number);
+        return i;
+    }
+}
+
+int providers::display_all(){
+    return display_all(root);
+}
+
+int providers::display_all(node * root){
+    int i = 0;
+    if (!root) return i;
+    else{
+        root->current.display();
+        i += display_all(root->left);
+        i += display_all(root->right);
         return i;
     }
 }

@@ -13,16 +13,13 @@ int main()
 	char selection = '0';
 	char quit = 'a';
 	provider * temp_provider = new provider;
-	provider * temp_provider2 = new provider;
-	provider * temp_provider3 = new provider;
 	providers * temp_providers = new providers;
-	char temp_numb[NUMBERSIZE];
 
 	//welcome message
 	cout << "\n\nWelcome to the CS202 Contact and Device Manager\nCreated by Ethan Saftler\n\n\n";
 
 	//while loop for main menu using switch statement for selection
-	while (selection != '9')
+	while (selection != 'Z')
 	{
 		cout << endl << endl;
 		cout << "Chocoholics Anonymous Manager Terminal\n\n";
@@ -35,7 +32,8 @@ int main()
 		cout << "	5 - Add Member\n";
 		cout << "	6 - Delete Member\n";
 		cout << "	7 - Add Provider\n";
-		cout << "	8 - Exit\n ";
+		cout << "	8 - Delete Provider\n";
+		cout << "	E - Exit\n ";
 
 		cin >> selection;
 		cin.ignore(100, '\n');
@@ -49,11 +47,7 @@ int main()
 				//TODO - add service
 				break;
 			case '3':	
-				//TODO - uptdate to display entire providers class
-				cout << "enter provider number to display";
-				cin.get(temp_numb, NUMBERSIZE, '\n');
-				cin.ignore(100, '\n');
-				temp_providers->display(temp_numb);
+				temp_providers->display_all();
 				break;
 			case '4':	
 				//TODO - display weekly report
@@ -68,22 +62,31 @@ int main()
 				//TODO - update to providers class
 				temp_provider->create();
 				temp_providers->insert(*temp_provider);
-				temp_provider2->create();
-				temp_providers->insert(*temp_provider2);
-				temp_provider3->create();
-				temp_providers->insert(*temp_provider3);
 				break;
-			case '8':		
+			case '8':
+				//TODO - delete provider
+				break;
+			case 'E':
 				cout << endl << "Are you sure you would like to quit?" << endl;
 				cout << "Enter 'Y' to quit or any other key to return to the main menu." << endl;
 				cin >> quit;
 				cin.ignore(100, '\n');
 				if ( quit == 'Y' || quit == 'y' )
 				{
-					selection = '9';
+					selection = 'Z';
 				}
 				break;
-			case '9':
+			case 'e':		
+				cout << endl << "Are you sure you would like to quit?" << endl;
+				cout << "Enter 'Y' to quit or any other key to return to the main menu." << endl;
+				cin >> quit;
+				cin.ignore(100, '\n');
+				if ( quit == 'Y' || quit == 'y' )
+				{
+					selection = 'Z';
+				}
+				break;
+			case 'Z':
 				cerr << "Invalid response.";
 				selection = '0';
 				break;
@@ -94,9 +97,6 @@ int main()
 
 
 	}
-
-
-
 
 	return 0;
 }
