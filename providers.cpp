@@ -6,9 +6,10 @@ bool check_if_digit(char * to_check)
 {
     int i = 0;
     int len = strlen(to_check);
-    while (i <= len)
+    while (i < len)
     {
-        if (isdigit(to_check[i]) == false) return false;
+        if (!isdigit(to_check[i])){
+            return false;}
         i++;
     }
     return true;
@@ -19,9 +20,10 @@ bool check_if_letter(char * to_check)
 {
     int i = 0;
     int len = strlen(to_check);
-    while (i <= len)
+    while (i < len)
     {
-        if (isdigit(to_check[i]) == false) return false;
+        if (!isalpha(to_check[i])){
+            return false;}
         i++;
     }
     return true;
@@ -155,7 +157,7 @@ int provider::copy_provider(const provider & to_copy)
 //display current provider and all service events
 int provider::display() const{
     cout << "\n\nProvider name: " << name << endl;
-    cout << "Provider address: " << address << "\n\t\t" << city << ", " << state << " " << zip << endl;
+    cout << "Provider address: " << address << "\n\t\t  " << city << ", " << state << " " << zip << endl;
     cout << "Total consults: " << total_consults << endl;
     cout << "Weekly fee: " << weekly_fee << endl;
     cout << "Service Record:";
@@ -183,33 +185,34 @@ int provider::check_format(bool display)
 {
     int i = 1;
     if (name != NULL){
-        if (check_if_letter(this->name) == false){
+        if (check_if_letter(name) == false){
             i *= 3;
         }
     }
-    if (address != NULL){
-        if (check_if_letter(this->address) == false){
+    if (number != NULL){
+        if (check_if_digit(number) == false){
             i *= 5;
         }
-    }
+    }    
     if (city != NULL){
-        if (check_if_letter(this->city) == false){
+        if (check_if_letter(city) == false){
             i *= 7;
         }
     }
     if (state != NULL){
-        if (check_if_letter(this->state) == false){
+        if (check_if_letter(state) == false){
             i *= 11;
         }
     }
     if (zip != NULL){
-        if (check_if_digit(this->zip) == false){
+        if (check_if_digit(zip) == false){
             i *= 13;
         }
     }
     if (display == true){
         display_invalidity(i);
     }
+    cout << "I is: " << i << endl;
     return i;
 }
 
@@ -235,7 +238,7 @@ void display_invalidity(int check)
         temp = (check % 3);
         if (temp == 0) cerr << "\ninvalid name. ";
         temp = (check % 5);
-        if (temp == 0) cerr << "\ninvalid address. ";
+        if (temp == 0) cerr << "\ninvalid number. ";
         temp = (check % 7);
         if (temp == 0) cerr << "\ninvalid city. ";
         temp = (check % 11);

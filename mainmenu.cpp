@@ -14,6 +14,7 @@ int main()
 	char quit = 'a';
 	provider * temp_provider = new provider;
 	providers * temp_providers = new providers;
+	int check = 0;
 
 	//welcome message
 	cout << "\n\nWelcome to the CS202 Contact and Device Manager\nCreated by Ethan Saftler\n\n\n";
@@ -61,7 +62,12 @@ int main()
 			case '7':
 				//TODO - update to providers class
 				temp_provider->create();
+				check = temp_provider->check_format();
+				if (check == 1)
 				temp_providers->insert(*temp_provider);
+				else{
+					cout << "\nIncorrect Info. Provider was not added.";
+				}
 				break;
 			case '8':
 				//TODO - delete provider
