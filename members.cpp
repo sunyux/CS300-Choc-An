@@ -28,7 +28,3 @@ member::~member()
     zip=NULL;
     service=NULL;
 }
-member::copy_member(const member&to_copy)
-{
-
-}
