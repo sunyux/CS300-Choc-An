@@ -4,6 +4,7 @@
 // if you use gcc, two slashes will
 // work too (and may be preferred) #include <stdio.h>
 /* main returns an integer */
+//IT is a test
 #include"stdio.h"
 int
 main(int argc, char *argv[])
